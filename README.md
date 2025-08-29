@@ -6,7 +6,7 @@ This project analyzes Walmart sales data across three branches — Yangon, Manda
 - MySQL
 
 #  The Analysis
-## 1. Unique Branches
+## 1. Branch and City Mapping
 **Question:** Which branches are operating in which cities?
 
 ```sql
@@ -20,6 +20,8 @@ ORDER BY branch;
 | Yangon    | A      |
 | Mandalay  | B      |
 | Naypyitaw | C      |
+
+*Table showing the mapping of each branch to its respective city.*
 
 ### Insights: 
 - The dataset includes three branches, each located in a different city: Yangon (Branch A), Mandalay (Branch B), and Naypyitaw (Branch C).  
