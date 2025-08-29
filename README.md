@@ -2,9 +2,8 @@
 This project analyzes Walmart sales data across three branches — Yangon, Mandalay, and Naypyitaw — over a 3-month period. The goal is to uncover key insights into branch performance, customer preferences, and product trends, helping to understand how sales vary by location and category.
 
 # The Tools I Used
-SQL → the language you used for querying and analysis
-
-MySQL → the database management system (DBMS) where you executed the queries
+- SQL 
+- MySQL
 
 #  The Analysis
 # 1. Unique Cities
