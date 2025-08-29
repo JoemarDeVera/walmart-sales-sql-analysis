@@ -1,5 +1,5 @@
 # Introduction
- This project analyzes Walmart sales data spanning 3 months to uncover key insights into sales performance, customer behavior, and product trends.
+This project analyzes Walmart sales data across three branches — Yangon, Mandalay, and Naypyitaw — over a 3-month period. The goal is to uncover key insights into branch performance, customer preferences, and product trends, helping to understand how sales vary by location and category.
 
 # The Tools I Used
 SQL → the language you used for querying and analysis
