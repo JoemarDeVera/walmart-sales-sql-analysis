@@ -88,8 +88,8 @@ SELECT
     SUM(cogs) AS total_cogs,
     SUM(total) - SUM(cogs) AS gross_profit
 FROM sales
-GROUP BY branch, month
-ORDER BY branch, month;
+GROUP BY branch, month_name, MONTH(date)
+ORDER BY branch, MONTH(date);
 ```
 
 ## Branch A – Monthly Sales Summary
@@ -127,14 +127,12 @@ Insights:
 
 ```sql
 SELECT 
-city,
-    branch,
+    CONCAT('Branch ', branch, ' – ', city) AS branch_city,
     product_line,
     SUM(total) AS total_revenue
 FROM sales
-GROUP BY city, branch, product_line
+GROUP BY branch, city, product_line
 ORDER BY branch, total_revenue DESC;
-
 ```
 
 ### Branch A – Yangon
@@ -184,7 +182,7 @@ SELECT
     branch,
     gender,
     product_line,
-    SUM(total) AS total_sales
+    SUM(total) AS total_revenue
 FROM sales
 GROUP BY branch, gender, product_line
 ORDER BY branch, gender, total_sales DESC;
@@ -275,7 +273,9 @@ Insights:
 - Branch C (Naypyitaw): Female customers overwhelmingly drove sales in Food and Beverages (15,661.16), while males spent the most on Health and Beauty (10,169.59).
 - Overall: Females tend to dominate sales in Food and Beverages across branches, while males lean more toward Health and Beauty and Sports and Travel.
 
-## 7. What is the average customer rating across branches?  
+## 7. Customer Ratings Analysis
+
+What is the average customer rating across branches?  
 
 | Branch | Average Rating |
 |--------|----------------|
