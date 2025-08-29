@@ -253,7 +253,16 @@ Insights:
 
 ## 6. Customer Ratings Analysis
 
-What is the average customer rating across branches?  
+Question: What is the average customer rating across branches?  
+
+```sql
+SELECT 
+    branch,
+    ROUND(AVG(rating), 2) AS average_rating
+FROM sales
+GROUP BY branch
+ORDER BY average_rating DESC;
+```
 
 | Branch | Average Rating |
 |--------|----------------|
