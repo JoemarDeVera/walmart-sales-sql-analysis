@@ -6,50 +6,27 @@ This project analyzes Walmart sales data across three branches — Yangon, Manda
 - MySQL
 
 #  The Analysis
-# 1. Unique Cities
-**Question:** How many unique cities does the data have?  
+## 1. Unique Branches
+**Question:** Which branches are operating in which cities?
 
 ```sql
-SELECT DISTINCT city
-FROM sales;
-```
-| City      |
-| --------- |
-| Yangon    |
-| Naypyitaw |
-| Mandalay  |
-
-### Insights:
-- The dataset contains three unique cities: Yangon, Naypyitaw, and Mandalay.
-
-
-## 2. Unique Branches
-**Question:** How many unique branches does the data have?
-
-```sql
-SELECT DISTINCT city
-FROM sales;
+SELECT DISTINCT city, branch
+FROM sales
+ORDER BY branch;
 ```
 
-| Branch    |
-| --------- |
-| A  |
-| B  |
-| C  |
+| City      | Branch |
+|-----------|--------|
+| Yangon    | A      |
+| Mandalay  | B      |
+| Naypyitaw | C      |
+
+### Insights: 
+- The dataset includes three branches, each located in a different city: Yangon (Branch A), Mandalay (Branch B), and Naypyitaw (Branch C).  
+- This helps in analyzing sales, customer behavior, and product trends **by branch and city**, making it easier to compare performance across locations.
 
 
-### Insights:
- The dataset shows that 
-
-- Branch A is Yangon, 
-
-- Branch B is Mandalay,
-
-- Branch C  is Naypyitaw,
-
-
-
-## 3. Market Reach and Branch Performance
+## 2. Market Reach and Branch Performance
 **Question:** Which city and branch generate the most revenue?
 
 ```sql
@@ -76,7 +53,7 @@ ORDER BY total_revenue DESC;
 - **Mandalay (Branch B)** registered `106,197.67`, nearly equal to Yangon.  
 - The data suggests **sales performance is fairly balanced** across the three branches, with only a slight lead by Naypyitaw.
 
-## 4.Monthly Sales Summary Across 3 Branches
+## 3.Monthly Sales Summary Across 3 Branches
 
 **Question:** What is the monthly revenue, Cost of Goods, and Gross Profit across 3 branches
 ```sql
@@ -120,7 +97,7 @@ Insights:
 - Branch C (Naypyitaw): Outperformed other branches in January with the highest revenue overall (40,434.68) and the strongest gross profit (1,925.46).
 - Overall, January is the strongest month across all branches, while February consistently shows the weakest sales and profits.
 
-## 5. Top Product Line Revenue by Branch
+## 4. Top Product Line Revenue by Branch
 
 **Question:** Which product line sells the most in each branch?
 
@@ -172,7 +149,7 @@ Insights:
 - Branch C (Naypyitaw): Food and Beverages dominated with 23,766.86, the single highest product line revenue across all branches.
 - The data highlights different consumer preferences: Home and lifestyle in Yangon, sports/health in Mandalay, and food in Naypyitaw.
 
-## 6. Total Sales by Gender & Product Line in each Branch
+## 5. Total Sales by Gender & Product Line in each Branch
 
 Question: How do gender preferences for product lines vary across the three branches?
 
@@ -272,7 +249,7 @@ Insights:
 - Branch C (Naypyitaw): Female customers overwhelmingly drove sales in Food and Beverages (15,661.16), while males spent the most on Health and Beauty (10,169.59).
 - Overall: Females tend to dominate sales in Food and Beverages across branches, while males lean more toward Health and Beauty and Sports and Travel.
 
-## 7. Customer Ratings Analysis
+## 6. Customer Ratings Analysis
 
 What is the average customer rating across branches?  
 
